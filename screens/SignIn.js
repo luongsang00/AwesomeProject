@@ -8,7 +8,6 @@ import {
   SafeAreaView,
 } from "react-native";
 import React from "react";
-import topSignIn from "../components/topSignIn";
 
 const SignIn = () => {
   return (
@@ -20,15 +19,23 @@ const SignIn = () => {
 
         <View style={styles.center}>
           <View>
-            <Text style={styles.marginleft}>Your email</Text>
-            <TextInput style={styles.input} placeholder="abc@gmail.com" />
+            <Text style={styles.textcenter}>Your email</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="example@email.com"
+              keyboardType="email-address"
+            />
           </View>
           <View style={{ marginTop: 10 }}>
-            <Text style={styles.marginleft}>Your password</Text>
-            <TextInput style={styles.input} placeholder="******" />
+            <Text style={styles.textcenter}>Your password</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="********"
+              keyboardType="visible-password"
+            />
           </View>
-          <View style={{ marginTop: 5, marginHorizontal: 100 }}>
-            <Button style={styles.button} title="Sign In" width="40" />
+          <View style={{ marginTop: 15, marginHorizontal: 170 }}>
+            <Button title="Sign In" color={"#0000ff"} width="40" />
           </View>
           <View>
             <Text style={styles.textbottom}>For got your password</Text>
@@ -42,16 +49,15 @@ const SignIn = () => {
 export default SignIn;
 const styles = StyleSheet.create({
   main: {
-    // display: "flex",
-    // flexDirection: "row",
     flex: 1,
     backgroundColor: "#f5f5f5",
-    // width: 450,
+    width: "100%",
   },
   top: {
-    flex: 1,
-    // backgroundColor: "#ff6347",
-    height: 40,
+    backgroundColor: "#ff6347",
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
   },
   texttop: {
     textAlign: "center",
@@ -61,35 +67,31 @@ const styles = StyleSheet.create({
     color: "#ffffff",
   },
   center: {
-    flex: 3,
-    // backgroundColor: "#ffefd5",
     display: "flex",
-    flexDirection: "column",
+    justifyContent: "center",
+    width: "100%",
+    height: 700,
   },
   input: {
     marginTop: 5,
     borderWidth: 1,
+    borderColor: "#ff6347",
     marginHorizontal: 10,
     paddingHorizontal: 10,
     height: 40,
   },
 
-  button: {
-    width: 40,
-    color: "#841584",
-  },
   textbottom: {
-    marginTop: 5,
+    marginTop: 20,
     textAlign: "center",
     textDecorationLine: "underline",
   },
-  marginleft: {
+  textcenter: {
     marginLeft: 20,
+    color: "#a9a9a9",
   },
   l: {
-    display: "flex",
-    flexDirection: "column",
     flex: 1,
-    width: 450,
+    display: "flex",
   },
 });
